@@ -82,20 +82,6 @@ function findKeyText(data, txt) {
   return false;
 }
 
-gulp.task('styles', function() {
-  gulp.src('styles/*.scss')
-  .pipe(plumber({ errorHandler: onError }))
-  .pipe(sourcemaps.init())
-  .pipe(sass({indentedSyntax: false}))
-  .pipe(autoprefixer({
-    browsers: ['last 5 versions'],
-    cascade: false}))
-  .pipe(cleanCSS())
-  .pipe(sourcemaps.write())
-  .pipe(rename({ suffix: '.min'}))
-  .pipe(gulp.dest('build/css'));
-});
-
 gulp.task('templates', function() {
   gulp.src('./*.pug')
   .pipe(plumber({ errorHandler: onError }))
@@ -122,6 +108,20 @@ gulp.task('scripts', function() {
   .pipe(sourcemaps.write())
   .pipe(rename({ suffix: '.min'}))
   .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('styles', function() {
+  gulp.src('styles/*.scss')
+  .pipe(plumber({ errorHandler: onError }))
+  .pipe(sourcemaps.init())
+  .pipe(sass({indentedSyntax: false}))
+  .pipe(autoprefixer({
+    browsers: ['last 5 versions'],
+    cascade: false}))
+  .pipe(cleanCSS())
+  .pipe(sourcemaps.write())
+  .pipe(rename({ suffix: '.min'}))
+  .pipe(gulp.dest('build/css'));
 });
 
 gulp.task('images', function() {
