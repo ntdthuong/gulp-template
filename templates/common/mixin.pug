@@ -1,0 +1,14 @@
+mixin sitemaps(obj)
+  .container&attributes(attributes)
+    table.table.table-striped
+      thead
+        tr
+          th Pages
+          th Status
+        tr
+      tbody
+        each page in obj      
+          tr
+            td 
+              a(href= page.href, title= page.text, style='color:#000; text-decoration:none')= page.text
+            td= page.percent

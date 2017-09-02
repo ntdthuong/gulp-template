@@ -1,0 +1,15 @@
+html {
+  font-size: 10px;
+  font-family: Verdana, Tahoma, sans-serif, serif;
+}
+.table-striped>thead {
+  font-size: 2.5rem;
+  color: darkblue;
+}
+.table-striped>tbody>tr {
+  background: lightblue;
+  font-size: 2rem;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: pink;
+}
