@@ -1,7 +1,61 @@
-h1 {
-  color: red;
-  font-size: 30px
+$bg: #000;
+$border: #fff;
+$w-border: 0.2rem;
+$bg-hover: red;
+$color-text: #fff;
+.container-home {
+  background: #000;
 }
-.tab {
-  display: none;
+nav.nav01{
+  padding: 5rem;
+  background: $bg;
+  > ul > li:not(:first-child) {
+    border-left: none;
+   }
+  ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      position: relative;
+      float: left;
+      border: solid $w-border $border;
+      &:hover {
+        background: grey;
+        > ul {
+          display: block;
+        }
+      }
+      a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 1.5rem 3rem;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+  ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: $w-border*(-1);
+    right: $w-border*(-1);
+    li {
+      float: none;
+      &:not(:first-child) {
+        border-top: none;
+      }
+    }
+  }
+  ul ul ul {
+    position: absolute;
+    top: $w-border*(-1);
+    left: 100%;
+    li {
+      border: solid $w-border $border;
+      float: left;
+    }
+  }
 }

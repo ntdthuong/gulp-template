@@ -1,0 +1,39 @@
+$bg-grey: #383838;
+$text-grey: #C7C7C7;
+$border-grey: #4D5152;
+.cv-right {
+  background: $bg-grey;
+  .avatar {
+    padding: 3rem;
+  }
+  div {
+    .title {
+      text-transform: uppercase;
+      color: $text-grey;
+      padding: 0 1rem;
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: .15em;
+        left: 0;
+        right:0;
+        height: 1px;
+        background: $border-grey;
+      }
+    }
+  }
+}
+.demo .tab {
+  display: none;
+}
+.prev, .next {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 1rem;
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

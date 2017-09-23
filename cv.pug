@@ -11,8 +11,41 @@ html(lang="en")
     link(rel="stylesheet" href="css/main.min.css")
     //[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]
 
-  body.container-home
-    include templates/common/main-header
+  body.container-cv
+    .container
+      .row
+        .col-md-8(data-arrow)
+          ul#tabs.nav.nav-pills
+            li
+              a(data-toggle='pill', href='#menu1') Menu 1
+            li.active
+              a(data-toggle='pill', href='#menu4') Menu 4
+            li
+              a(data-toggle='pill', href='#menu3') Menu 3
+            li
+              a(data-toggle='pill', href='#menu2') Menu 2
+
+          .tab-content
+            #menu1.tab-pane.fade
+              h3 HOME
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            #menu4.tab-pane.fade.in.active
+              h3 Menu 1
+              p
+                | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            #menu2.tab-pane.fade
+              h3 Menu 2
+              p
+                | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            #menu3.tab-pane.fade
+              h3 Menu 3
+              p
+                | Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          a.prev(data-prev) <
+          a.next(data-next) >
+        .col-md-4
+          include templates/components/cv-right
     //- script(src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous")
     script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")    
     <script>window.jQuery || document.write('<script src="js/vendor/jquery/dist/jquery/jquery.min.js"><\/script>')</script>
